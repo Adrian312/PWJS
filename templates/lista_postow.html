@@ -1,0 +1,15 @@
+{% extends "baza.html" %}
+
+{% block content %}
+	<div class="col-sm-9">
+	{% for rek in rekordy %}
+		<br>
+		<h3><small>  {{rek["autor"]}}</small></h3>
+		<hr>
+		<h2 id="posty">{{rek["operacja"]}}</h2>
+		<br>
+		<p id="posty" style="font-size: 16px;">{{rek["sposob_wykonania"]}}</p>
+		<br><br>
+	{% endfor %}
+	</div>
+{% endblock %}

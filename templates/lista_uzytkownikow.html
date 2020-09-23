@@ -1,0 +1,24 @@
+{% extends "baza.html" %}
+
+{% block content %}
+	<div id="margines" class="col-sm-9">
+	<h1 id="tytuly">Użytkownicy Auto Land</h1>
+    <hr>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+			  <th scope="col">Imię</th>
+			  <th scope="col">Nazwisko</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for rekord in rekordy %}
+		<tr>
+			<td><h4 id="temat">{{rekord["imie"]}}</h4></td>
+			<td><h4 id="temat">{{rekord["nazwisko"]}}</h4></td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</div>
+{% endblock %}

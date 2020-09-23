@@ -1,0 +1,11 @@
+{% extends "baza.html" %}
+
+{% block content %}
+	<br>
+	<br>
+	<h1 style="text-align: center; font-size: 40px;">{{tytul}}</h1>
+	<p class="lead" style="text-align: center; font-size: 30px;">{{tresc}}</p>
+	{% if current_user.is_authenticated %}
+		<p style="text-align: center; font-size: 40px;">Witaj na Auto Land {{ current_user.name }}!</p>
+	{% endif %}
+{% endblock %}

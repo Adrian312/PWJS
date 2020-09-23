@@ -1,0 +1,25 @@
+{% extends "baza.html" %}
+
+{% block content %}
+	<div id="margines" class="col-sm-9">
+	<h1 id="tytuly">Dodaj poradnik!</h1>
+    <hr>
+	<form action = "{{url_for('addrecc')}}" method = "POST">
+		<fieldset>
+			<div class="form-group">
+				<h3><label>Tytuł</label></h3>
+				<input type = "text" class="form-control" placeholder="Tytuł posta" name = "operacja" />
+			</div>
+			<div class="form-group">
+				<h3><label>Poradnik</label></h3>
+				<textarea rows="6" class="form-control" placeholder="Napisz post" name = "sposob_wykonania"></textarea>
+			</div>
+			<div class="form-group">
+				<h3>Autor</h3>
+				<input type = "text" class="form-control" placeholder="Imię i nazwisko" name = "autor" />
+			 </div>
+			 <input style="color: black" type = "submit" class="btn btn-danger" value = "Dodaj poradnik" /><br>
+		</fieldset>
+	</form>
+	</div>
+{% endblock %}

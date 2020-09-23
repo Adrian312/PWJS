@@ -1,0 +1,106 @@
+<html>
+<head>
+  <title>Auto Land</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet"> 
+  <style>
+	  .page-footer {
+	background-color: #33CC33;
+	}
+
+	.page-footer > .footer-copyright > a {
+		color: black;
+	}
+
+	.page-footer > .footer-copyright {
+		color: black;
+	}
+
+	.navbar {
+		background-color: #33CC33;
+	}
+
+	body {
+		background-color: #99FF99;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+
+	li {
+	font-size: 24px;
+	}
+	
+	#posty {
+		text-align: left;
+	}
+	
+	#margines {
+		margin-top: 20px;
+	}
+	
+  </style>
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light">
+	<a class="navbar-brand" href="#">
+	  <img src="{{url_for('static', filename='logo.png')}}" style="display: inline-block; width:80px;height:60px;"/>
+	  <span style="display: inline-block;">Auto Land</span>
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+	  <ul class="navbar-nav ml-auto">
+		<li class="nav-item">
+		  <a class="nav-link" href="/" class="btn">Strona głowna</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="/listaPostow" class="btn">Poradniki</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="/dodajPost" class="btn">Dodaj poradnik</a>
+		</li>
+		<li class="nav-item">
+		  <a class="nav-link" href="/listaUzytkownikow" class="btn">Użytkownicy</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="/dodajUzytkownika" class="btn">Rejestracja</a>
+		</li>
+		{% if current_user.is_authenticated %}
+		<a href="/logout"><input id="menu"  style="color: black" type="submit" class="btn btn-danger btn-lg" value="Wyloguj się"></a>
+		{% else %}
+		<a href="/login"><input id="menu"  style="color: black" type="submit" class="btn btn-danger btn-lg" value="Zaloguj się"></a>
+		{% endif %}
+	  </ul>
+	</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<br>
+				<img src="{{url_for('static', filename='auto1.jpg')}}" class="rounded" style="display: inline-block; width:600px;height:400px;"/>
+				<img src="{{url_for('static', filename='auto2.jpg')}}" class="rounded" style="display: inline-block; width:600px;height:400px;"/>
+				<img src="{{url_for('static', filename='auto3.jpg')}}" class="rounded" style="display: inline-block; width:600px;height:400px;"/>
+			</div>
+			
+			<div class="col-sm-9" align="center">
+				{% block content %}
+				
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+
+	<footer class="page-footer font-small blue fixed-bottom">
+		<div class="footer-copyright text-center py-3">Autor Auto Land:
+		  <a href="#"> Adrian Stolarz </a>  
+		</div>
+	</footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

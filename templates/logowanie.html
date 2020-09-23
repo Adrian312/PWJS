@@ -1,0 +1,24 @@
+{% extends "baza.html" %}
+
+{% block content %}
+	<div id="margines" class="col-sm-9">
+		
+			<h1>Zaloguj się</h1>
+			<hr>
+			<form action="{{ url_for('login') }}" method="post">
+				<fieldset>
+					<div class="form-group" id="name">
+						<h3>LOGIN</h3>
+						<input type="text" name=username class="form-control" placeholder="Podaj login"/>
+					</div>
+					<div class="form-group" id="name">
+						<h3><label>HASŁO</label></h3>
+						<input type="password" name=password class="form-control" placeholder="Podaj hasło"/>
+					</div>
+					<p><input id="menu"  style="color: black" type="submit" class="btn btn-danger" value="LOGUJ"/>
+				</fieldset>
+			</form>
+		
+	</div>
+
+{% endblock %}

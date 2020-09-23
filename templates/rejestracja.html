@@ -1,0 +1,30 @@
+{% extends "baza.html" %}
+
+{% block content %}
+	<div id="margines" class="col-sm-9">
+	<h1>REJESTRACJA</h1>
+	<h3>Konto na tej stronie umożliwia przeglądanie oraz dodawanie własnych poradników!</h3>
+    <hr>
+	<form action = "{{url_for('addrec')}}" method = "POST">
+		<fieldset>
+			<div class="form-group">
+				<h3>Imię</h3>
+				<input type="text" class="form-control" placeholder="Podaj imię" name = "imie"/>
+            </div>
+			<div class="form-group">
+				<h3>Nazwisko</h3>
+				<input type="text" class="form-control" placeholder="Podaj nazwisko" name = "nazwisko"/>
+			</div>
+			<div class="form-group">
+				<h3>Login</h3>
+				<input type="text" class="form-control" placeholder="Podaj login" name = "login"/>
+			</div>
+			<div class="form-group">
+				<h3>Hasło</h3>
+				<input type="password" class="form-control" placeholder="Podaj hasło" name = "haslo"></textarea>
+			</div> 
+			<input id="menu"  style="color: black" type="submit" class="btn btn-danger" value="Gotowe"/>
+		</fieldset>
+	</form>
+	</div>
+{% endblock %}
